@@ -7,6 +7,7 @@ import '../Stylesheets/LoginPage.css';
 import traqLogo from '../assets/traq-logo.svg';
 import traqLogoText from '../assets/traq-logo-text.svg';
 import { login, signup } from '../api-helpers';
+import Cookies from 'js-cookie';
 
 const LoginPage = () => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -29,8 +30,7 @@ const LoginPage = () => {
 		const { success, message } = await login(loginInfo.traqId, loginInfo.password);
 	
 		if (success) {
-			alert('Login successful!');
-			navigate('/dashboard');
+			navigate('/channels');
 		} else {
 			alert(message);
 		}

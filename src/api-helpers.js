@@ -4,7 +4,8 @@ export const login = async (name, password) => {
   try {
     const response = await axios.post(
       `/login`,
-      { name, password }
+      { name, password }, 
+			{ withCredentials: true }
     );
     return { success: true, data: response.data };
   } catch (error) {
@@ -27,6 +28,22 @@ export const signup = async (name, password) => {
     return {
       success: false,
       message: error.response?.data?.message || 'Signup failed. Please try again.',
+      status: error.response?.status || 500,
+    };
+  }
+};
+
+export const checkLoginStatus = async () => {
+  try {
+    const response = await axios.get(`/users/me`, {
+      withCredentials: true,
+    });
+
+    return { success: true, data: response.data };
+  } catch (error) {
+    return {
+      success: false,
+      message: 'User is not logged in',
       status: error.response?.status || 500,
     };
   }

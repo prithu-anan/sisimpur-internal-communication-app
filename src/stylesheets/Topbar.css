@@ -1,0 +1,37 @@
+.topbar-container {
+    display: flex;
+    flex-direction: row;
+    height: 3vh;
+    width: 100vw;
+    padding: 5px;
+    justify-content: left;
+    align-items: center;
+}
+
+.traffic-container {
+    display: flex;
+    flex-direction: row;
+    width: 10%;
+}
+
+.traffic-circle {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.action-container {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.question-container {
+    width: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-right: 10px;
+}
